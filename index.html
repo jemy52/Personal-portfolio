@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- metadata -->
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>My Personal Portfolio</title>
+    <meta name="description" content="Welcome to my personal portfolio website, showcasing my projects, skills, and experiences."/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">My Portfolio</div>
+            <!--Hamburger Toggle Button-->
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                 <span class="bar"></span>
+                  <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#achievements-quotes">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> 
+        <section id="home"> 
+            <div class="hero-content">
+                <p class="hero-subtitle">Hey, I am</p>
+                <h1 class="hero-title">Jemimah Mumo</h1>
+                <!-- We will add the typing animation here later! -->
+                 <h2 class="hero-profession">Web developer</h2>
+                 <p class="hero-description">I am a passionate web developer with experience in creating clean, responsive and user-friendly websites.</p>
+                 <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View my work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact me</a>
+                 </div>
+            </div>
+
+            <!--Right Column: Profile Image Placeholder-->
+            <div class="hero-image-container">
+                <div class="hero-image-placeholder">
+                    <!-- For now, we use an SVG or text fallback inside a styled container -->
+                     <span>Profile Image</span>
+                </div>
+            </div>
+</section>
+
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <!--Section Header-->
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <div class="header-underline"></div>
+                </div>
+                <!--About Content Grid-->
+                <div class="about-grid">
+              <!--Left Column: Narrative Bio-->
+              <div class="about-bio">
+                <h3>My Journey</h3>
+                <p>I'm a passionate developer expanding my skills in frontend technologies. My Journey into web development started out as a deep curiosity for how things work on the internet, which quickly evolved into a love for writing clean,efficient HTML and crafting layouts uding CSS while using JavaScript features to make the website interactive.</p>
+              </div>   
+              <!--Right Column: Professional Profile Details--> 
+              <div class="about-details">
+                <h3>Key Information</h3>
+                <ul class="details-list">
+                 <li><strong>Location:</strong> Nairobi, Kenya</li>
+                 <li><strong>Current Focus:</strong> HTML5, CSS3, JavaScript & Responsive UI</li>
+                 <li><strong>Interests:</strong>Web Design and Development, Typography</li>
+                 <li><strong>Status:</strong> Open to learning collaborations</li>
+                </ul>
+                <!--Placeholder for future Download CV button-->
+                <div class="about-action">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+              </div>
+                </div>
+            </div>
+           
+         </section>
+
+        <section id="skills" class="skills-section">
+            <div class="section-container">
+         <h2>My Skills</h2>
+         <div class="header-underline"></div>
+            </div>  
+            <!--Skills Grid Container--> 
+        <div class="skills-grid">
+        <!--Skills Card 1-->
+        <div class="skill-card">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML5</h3>
+            <p>Semantic structures, SEO baseline, web accessibility rules.</p>
+        </div>
+        <!--Skills Card 2-->
+        <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS3</h3>
+            <p>Flexbox, CSS Grid layouts, custom animations, variables.</p>
+        </div>
+        <!--Skills Card 3-->
+        <div class="skill-card">
+            <div class="skill-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Mobile-first workflows, fluid media queries, flexiblw viewports.</p>
+        </div>
+        <!--Skills Card 4-->
+        <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Web Design</h3>
+            <p>Visual hierarchy, clean typography systems, spacing systems.</p>
+        </div>
+    </div>
+    </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                    <div class="header-underline"></div>
+                </div>
+                <div class="projects-grid">
+                    <!--Project Card 1-->
+                    <div class="project-card">
+                        <div class="project-image">Project Image</div>
+                        <div class="project-content">
+                            <h3>Industrial Equipment Site</h3>
+                            <p>A responsive landing page for an industrial equipment supplier, featuring a clean layout and clear service categorization.</p>
+                            <div class="project-tags">
+                                <span>HTML</span> <span>CSS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-link">Live Demo</a>
+                                <a href="#" class="btn-link">GitHub</a>
+                            </div>
+                        </div>
+                 </div>
+                 <!--Project Card 2 (Add more as you build)-->
+                 <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Portfolio Website</h3>
+                        <p>My personal portfolio built to showcase my growth, projects and learning journey in Frontend Development.</p>
+                        <div class="project-tags">
+                            <span>HTML</span> <span>CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link">Live Demo</a>
+                            <a href="#" class="btn-link">GitHub</a>
+                        </div>
+                    </div>
+
+                 </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="background" class="bg-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Background</h2>
+                    <div class="header-underline"></div>
+                </div>
+
+                <div class="background-grid">
+                    <!--Experience Column-->
+                    <div class="column">
+                        <h3>Experience</h3>
+                        <div class="timeline-item">
+                            <h4>Frontend Developer Intern</h4>
+                            <span class="date">2026 - Present</span>
+                            <p>Building a responsive web design and learning industrial equipment display standards.</p>
+                        </div>
+                    </div>
+
+                    <!--Education Column-->
+                    <div class="column">
+                        <h3>Education</h3>
+                        <div class="timeline-item">
+                            <h4>Web Development Bootcamp</h4>
+                            <span class="date">2025-2026</span>
+                            <p>Focused on semantic HTML, CSS layout engines and responsive web design principles.</p>
+
+                            <h4>The Co-operative University of Kenya</h4>
+                            <span class="date">2024-2028</span>
+                            <p>Bachelor of Science in Information Technology</p>
+                            <p>Graduated with a Second Class Upper.</p>
+
+                            <h4>Precious Blood Kilungu(HighSchool)</h4>
+                            <span class="date">2020-2023</span>
+                            <p>Got a B in my KCSE Examinations</p>
+
+                            <h4>Unity Primary School</h4>
+                            <span class="date">2017-2019</span>
+                            <p>Got 375 marks in my KCPE Examinations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements-quotes" class="achievements-quotes-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Achievements & Quotes</h2>
+                    <div class="header-underline"></div>
+           </div>
+           <!--Main Grid Container splitting into two columns-->
+           <div class="split-section-grid">
+            <!--Left Column: Achievements-->
+            <div class="column-group">
+                <h3>Achievements</h3>
+                <div class="content-card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Portfolio Milestone</h3>
+                    <p>Successfully built a responsive multi-section portfolio from scratch using semantic HTML and custom CSS layouts.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Clean Code Advocate</h3>
+                        <p>Mastered modern layout engines like Flexbox and CSS Grid, eliminating the need for outdated float-based hacks.</p>
+                    </div>
+            </div>
+            <!--Right Column: Quotes-->
+            <div class="column-group">
+                <h3>Quotes</h3>
+                <div class="content-card quote-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Core Philosophy</h3>
+                    <p class="quote-text">Simplicity is the soul of efficiency.</p>
+                    <span class="quote-author">-Austin Freeman</span>
+                </div>
+                <div class="content-card quote-card">
+                    <div class="card-icon">💡</div>
+                    <h3>Mindset</h3>
+                    <p class="quote-text">Destiny is for losers. It's just a stupid excuse to wait for things to happen instead of making them happen.</p>
+                    <span class="quote-author">-Blair Wardolf</span>
+                </div>
+            </div>
+        </div>
+
+     </div>
+     </section>
+
+
+    </main>
+
+   <section id="contact" class="footer-contact-section">
+    <div class="section-container">
+        <!--Contact Header-->
+        <div class="section-header">
+            <h2>Get in Touch</h2>
+            <div class="header-underline"></div>
+        </div>
+        <div class="contact-footer-grid">
+            <!--Left Side: Contact Form-->
+            <div class="contact-form-container">
+                <h3>Send Me a Message</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <!--Right Side: Social Links & Info-->
+            <div class="contact-info-container">
+                <h3>Let's Connect</h3>
+                <p>I am currently looking for new opportunities in frontend web development. Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>GitHub</a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>LinkedIn
+                        </a>
+                        <a href="https://wa.me/0757711267" target="_blank" class="social-link" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>WhatsApp
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>Instagram
+                        </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+             <p>&copy; 2026 My Personal Portfolio. All rights reserved.</p>
+        </div>
+    </div>
+   
+</section>
+<script src="script.js" defer></script>
+</body>
+</html>

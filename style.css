@@ -1,0 +1,646 @@
+/* --- 1. CSS Variables (Global Settings) --- */
+:root {
+ --primary-color: #fc4c5e;
+ --primary-hover-color: #f4a3ab;
+ --bg-color: #e8e0e4;
+ --card-bg-color: #ffffff;
+ --text-main-color: #333333;
+ --text-muted-color: #717171;
+ --shadow-color: 0 2px 10px rgba(0, 0, 0, 0.1);
+ --transition-speed: 0.3s;
+ --navbar-height: 120px;
+}
+
+body{
+    font-family: cursive;
+    background-color: var(--bg-color);
+    color: var(--text-main-color);
+    padding-top: var(--navbar-height);
+}
+/*---Navigation Styling---*/
+header {
+    background-color: transparent;
+    box-shadow: var(--shadow-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.menu-toggle {
+    display: none; /*Hidden on desktop*/
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main-color, #333);
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+.nav-links li a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+.hero-container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(100vh - var(--navbar-height));
+    padding: 40px 20px;
+    gap: 40px;
+}
+.hero-content {
+    flex: 1;
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted-color);
+    font-weight:600;
+    margin-bottom: 10px;
+}
+.hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-muted-color);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+.hero-profession {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-muted-color);
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+/*Call-to-Action Buttons*/
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all var(--transition-speed) ease;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    border-color: var(--primary-hover-color);
+    transform: translateY(-3px);
+}
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+/* Right Column: Profile Image Placeholder Styling */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-image-placeholder {
+    width: 350px;
+    height: 350px;
+    background-color: #e9ecef;
+    border: 4px solid var(--card-bg-color);
+    border-radius: 50%; /* Makes the placeholder a perfect circle */
+    box-shadow: var(--shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted-color);
+    font-weight: 500;
+    /* Adds a glowing ring animation effect later */
+    transition: transform var(--transition-speed) ease;  
+}
+.hero-image-placeholder:hover {
+    transform: scale(1.03); /*Slightly expands when user hovers over it */
+}
+/* --- 5. About Section Styling --- */
+.about-section {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Alternating backgrounds creates clear section breaks */
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Reusable Section Header Style */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main-color);
+}
+
+.header-underline {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+/* About Grid Layout */
+.about-grid {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Left Column Styling */
+.about-bio {
+    flex: 3; /* Gives the text narrative slightly more proportional width */
+}
+
+.about-bio h3, 
+.about-details h3 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.about-bio p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Right Column Sidebar Styling */
+.about-details {
+    flex: 2; /* Keeps the key details column beautifully compact */
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.02);
+}
+
+.details-list {
+    list-style: none;
+}
+
+.details-list li {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eef0f2;
+    padding-bottom: 10px;
+}
+
+.details-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.details-list strong {
+    color: var(--text-main);
+    display: inline-block;
+    width: 130px; /* Aligns all values neatly in a virtual column */
+}
+
+.about-action {
+    margin-top: 25px;
+}
+/* --- 6. Skills Section Styling --- */
+.skills-section {
+    padding:80px 20px;
+    background-color: var(--bg-color);
+}
+/* The Layout Grid */
+.skills-grid {
+    display: grid;
+    /*The magic line making it responsive*/
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    gap: 30px;
+}
+/*Individual Card Styling*/
+.skill-card{
+    background-color: var(--card-bg-color);
+    padding:35px 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow-color);
+    transition: transform var(--transition-speed) ease,box-shadow var(--transition-speed) ease; 
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.skill-icon{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.skills-card h3{
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.skills-card p{
+    font-size: 0.95rem;
+    color: var(--text-muted-color);
+    line-height: 1.6;
+}
+.projects-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(autofit, minmax(320px, 1fr));
+    gap: 40px;
+}
+.project-card {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-color);
+    transition: transform var(--transition-speed) ease;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+}
+.project-image{
+    height: 200px;
+    background-color: #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted-color);
+}
+.project-content {
+    padding: 25px;
+}
+.project-content h3{
+    margin-bottom: 10px;
+    color: var(--text-main-color);
+}
+.project-tags{
+    margin: 15px;
+    display: flex;
+    gap: 10px;
+}
+.project-tags span {
+    font-size: 0.8rem;
+    background-color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.project-links {
+   display: flex; 
+   gap: 15px;
+   margin-top: 20px;
+}
+.btn-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+/*---8.Background Section Styling---*/
+.bg-section {
+    padding: 80px 20px;
+}
+.background-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+.column h3 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: var(--text-main-color);
+}
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    border-left: 2px solid var(--primary-color);
+}
+.timeline-item h4{
+    margin: 0;
+    font-size: 1.1rem;
+}
+.date {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin: 5px 0 10px;
+    font-weight: 600;
+}
+.timeline-item p{
+    color: var(--text-muted-color);
+    font-size: 0.95rem;
+}
+/*---9.Achievements & Quotes Section Styling---*/
+.achievements-quotes-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+}
+.split-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.column-group h3{
+    font-size: 1.3rem;
+    color: var(--text-main-color);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+}
+.column-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content-card {
+    background-color: var(--card-bg-color);
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-color);
+    text-align: center;
+    transition: transform var(--transition-speed) ease;
+}
+.content-card:hover {
+    transform: translateY(-5px);
+}
+.card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+.content-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-main-color);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.content-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted-color);
+    line-height: 1.6;
+}
+.quote-card {
+    border-top: 4px solid var(--primary-color);
+}
+.quote-text {
+    font-style: italic;
+    color: var(--text-main-color);
+    font-weight: 500;
+}
+.quote-author {
+    display: block;
+    margin-top: 12px;
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+/*---Contact & Footer Styling---*/
+.footer-contact-section {
+    background-color:var(--card-bg-color);
+    color: var(--text-main-color);
+    padding: 80px 20px 20px 20px;
+}
+.footer-contact-section .section-header h2 {
+    color: var(--text-main-color);
+}
+.contact-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+.contact-form-container h3,
+.contact-info-container h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--text-main-color);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--bg-color);
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: var(--text-muted-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+.contact-info-container p{
+    color: var(--text-muted-color);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+}
+.social-link{
+    display: inline flex;
+    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    color: #fc4c5e;
+    text-decoration: none;
+   font-weight: 600;
+   font-family: 1.5rem;
+}
+.social-link:hover {
+    text-decoration: underline;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #777;
+    font-size: 1rem;
+}
+@media screen and (max-width: 768px) {
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    /*Hide the Navigation links by default on mobile*/
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-color, #fff);
+        color: #333333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        text-align: center;
+        /*Hidden state setup for smooth transitions*/
+        max-height: 0;
+        overflow-y: auto;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.3 ease;
+    }
+     .nav-links.active {
+        max-height: 600px;
+        opacity: 1;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+   
+    /*Optional: Animate Hamburger bars into an 'X' shape when active*/
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    } 
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    /*Forces multi-column project/skill grids to drop to a single responsive column*/
+    .projects-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    /*Collapse the 2 side-by-side columns into a single stacked column*/
+    .split-section-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    /*Change the 2-column contact grid into a single vertical column*/
+    .contact-footer-grid {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0 15px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        box-sizing: border-box;
+    }
+    /*Ensures form container and info container to take full width nicely*/
+    .contact-form-container,
+    .contact-info-container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    .contact-info-container h3,
+    .contact-info-container p {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    /*Make form buttons stack or take full width on mobile for easy tapping*/
+    .form-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn, .btn-secondary {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
+
