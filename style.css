@@ -1,21 +1,33 @@
 /* --- 1. CSS Variables (Global Settings) --- */
-:root {
- --primary-color: #fc4c5e;
- --primary-hover-color: #f4a3ab;
- --bg-color: #e8e0e4;
- --card-bg-color: #ffffff;
- --text-main-color: #333333;
- --text-muted-color: #717171;
- --shadow-color: 0 2px 10px rgba(0, 0, 0, 0.1);
- --transition-speed: 0.3s;
- --navbar-height: 120px;
+:root { 
+    --primary-color: #fc4c5e;
+    --primary-hover-color: #f4a3ab;
+    --bg-color: #e8e0e4;
+    --card-bg-color: #ffffff;
+    --text-main-color: #333333;
+    --text-muted-color: #717171;
+    --shadow-color: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+    --navbar-height: 120px;
 }
 
-body{
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg-color: #1e1e1e;
+    --text-main-color: #f1f1f1;
+    --text-muted-color: #bdbdbd;
+    --primary-color: #fc4c5e;
+    --primary-hover-color:#f4a3ab ;
+    --shadow-color: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-color);
+}
+
+body {
     font-family: cursive;
     background-color: var(--bg-color);
     color: var(--text-main-color);
     padding-top: var(--navbar-height);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 /*---Navigation Styling---*/
 header {
@@ -173,7 +185,7 @@ header {
 /* --- 5. About Section Styling --- */
 .about-section {
     padding: 80px 20px;
-    background-color: #ffffff; /* Alternating backgrounds creates clear section breaks */
+    background-color: var(--card-bg-color); /* Alternating backgrounds creates clear section breaks */
 }
 
 .section-container {
@@ -306,7 +318,7 @@ header {
 }
 .projects-section {
     padding: 80px 20px;
-    background-color: #ffffff;
+    background-color: var(--card-bg-color)
 }
 .projects-grid {
     display: grid;
@@ -618,6 +630,7 @@ header {
         max-width: 100%;
         box-sizing: border-box;
         padding: 0;
+        background-color: var(--card-bg-color);
     }
     .contact-info-container h3,
     .contact-info-container p {
@@ -643,4 +656,3 @@ header {
         box-sizing: border-box;
     }
 }
-

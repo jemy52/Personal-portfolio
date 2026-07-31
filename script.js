@@ -40,3 +40,34 @@ function highlightNavigation() {
 }
 //Listen for scroll events and call the highlightNavigation function
 window.addEventListener('scroll', highlightNavigation);
+
+// 1. Select the standalone theme icon element
+const themeIcon = document.getElementById('theme-icon');
+
+// 2. Check if the user previously saved a theme preference in localStorage
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    // Apply the saved theme to the body
+    document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+    
+    // Update the icon shape to match the active theme
+    if (currentTheme === 'dark') {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+}
+
+// 3. Listen for a click event directly on the standalone icon
+themeIcon.addEventListener('click', function () {
+    // Toggle the 'dark-mode' class on the body element
+    document.body.classList.toggle('dark-mode');
+
+    // Check which mode is currently active, update storage, and swap the icon
+    if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun'); // Change to sun icon in dark mode
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon'); // Change back to moon icon in light mode
+    }
+});
