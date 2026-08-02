@@ -115,6 +115,19 @@ header {
     line-height: 1.2;
     margin-bottom: 15px;
 }
+.typed-text {
+    color: var(--primary-color);
+}
+.cursor {
+    display: inline-block;
+    background-color: var(--text-main-color);
+    margin-left: 2px;
+    animation: blank 0.7s infinite;
+}
+@keyframes blink {
+    0%, 100% {opacity: 1; }
+    50% {opacity: 0; }
+}
 .hero-profession {
     font-size: 1.2rem;
     color: var(--primary-color);

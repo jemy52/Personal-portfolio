@@ -71,3 +71,47 @@ themeIcon.addEventListener('click', function () {
         themeIcon.classList.replace('fa-sun', 'fa-moon'); // Change back to moon icon in light mode
     }
 });
+const typedTextSpan = document.querySelector(".typed-text");
+const words = ["Web Developer", "UI/UX Designer", "Software Engineer"];
+const typingDelay = 100;
+const erasingDelay = 50; //speed of deleting each character
+const newTextDelay = 2000; // Pause time before swithching to the next word
+
+let wordIndex = 0;
+let charIndex = 0;
+function type() {
+    //check if there are still characters left to type in the current word
+    if(charIndex < words[wordIndex].length) {
+        //add the next character to the typed text span
+        typedTextSpan.textContent += words[wordIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+    } else {
+        //if the word is fully typed, wait for a while and then start deleting
+        setTimeout(erase, newTextDelay);
+    }
+    }
+    function erase() {
+        //check if there are still characters left to delete in the current word
+        if(charIndex > 0) {
+            //remove the last character from the typed text span
+            typedTextSpan.textContent = words[wordIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, erasingDelay);
+        }
+        else {
+            //if the word is fully deleted, move to the next word and start typing
+            wordIndex++;
+            if(wordIndex >= words.length) {
+                wordIndex = 0; //loop back to the first word
+            }
+            setTimeout(type, typingDelay + 500); //small pause before typing the next word
+        }
+
+    }
+    // Ensure the DOM is fully loaded before starting the typing effect
+    document.addEventListener('DOMContentLoaded', function() {
+        if(words.length) {
+            setTimeout(type, newTextDelay);
+        }
+    }); 
