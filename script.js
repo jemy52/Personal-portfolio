@@ -115,3 +115,28 @@ function type() {
             setTimeout(type, newTextDelay);
         }
     }); 
+   // 1. Define observer options (when and how the animation should trigger)
+const observerOptions = {
+    root: null, // Uses the browser viewport as the container
+    threshold: 0.15 // Triggers when 15% of the element is visible on screen
+};
+
+// 2. Create the Intersection Observer instance
+const observer = new IntersectionObserver(function(entries, observerInstance) {
+    entries.forEach(entry => {
+        // Check if the element has scrolled into view
+        if (entry.isIntersecting) {
+            // Add the 'active' class to trigger the CSS transition
+            entry.target.classList.add('active');
+            
+            // Optional: Stop observing the element once it has animated (runs only once)
+            observerInstance.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// 3. Select all elements with the 'reveal' class and tell the observer to watch them
+const revealElements = document.querySelectorAll('.reveal');
+revealElements.forEach(element => {
+    observer.observe(element);
+}); 

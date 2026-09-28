@@ -22,6 +22,10 @@ body.dark-mode {
     background-color: var(--bg-color);
 }
 
+body.dark-mode header {
+    background-color: rgba(18, 18, 18, 0.78);
+}
+
 body {
     font-family: cursive;
     background-color: var(--bg-color);
@@ -31,12 +35,14 @@ body {
 }
 /*---Navigation Styling---*/
 header {
-    background-color: transparent;
+    background-color: rgba(232, 224, 228, 0.78);
     box-shadow: var(--shadow-color);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 .navbar {
     display: flex;
@@ -88,6 +94,15 @@ header {
 .nav-links li a.active {
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+   opacity: 1;
+   transform: translateY(0); 
 }
 .hero-container {
     display: flex;
