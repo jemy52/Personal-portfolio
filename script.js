@@ -139,4 +139,20 @@ const observer = new IntersectionObserver(function(entries, observerInstance) {
 const revealElements = document.querySelectorAll('.reveal');
 revealElements.forEach(element => {
     observer.observe(element);
-}); 
+});
+
+const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bar = entry.target;
+            const progress = bar.getAttribute('data-progress');
+            bar.style.setProperty('--progress-width', `${progress}%`);
+            bar.classList.add('animate');
+            progressObserver.unobserve(bar);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.progress-bar').forEach(bar => {
+    progressObserver.observe(bar);
+});
