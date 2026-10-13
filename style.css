@@ -450,6 +450,34 @@ header {
     font-weight: 600;
     font-size: 0.9rem;
 }
+/* Project Filters */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.filter-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted-color);
+    background-color: var(--card-bg-color);
+    border: 2px solid var(--bg-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+}
+.project-card.hidden {
+    display: none;
+}
 /*---8.Background Section Styling---*/
 .bg-section {
     padding: 80px 20px;

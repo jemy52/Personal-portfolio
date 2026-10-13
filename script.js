@@ -156,3 +156,25 @@ const progressObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.progress-bar').forEach(bar => {
     progressObserver.observe(bar);
 });
+// Project Filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Update active button
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card => {
+            const tech = card.dataset.tech || '';
+            if (filter === 'all' || tech.includes(filter)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
