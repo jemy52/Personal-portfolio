@@ -1,4 +1,4 @@
-/* --- 1. CSS Variables (Global Settings) --- */
+﻿/* --- 1. CSS Variables (Global Settings) --- */
 :root { 
     --primary-color: #fc4c5e;
     --primary-hover-color: #f4a3ab;
@@ -186,6 +186,28 @@ header {
     transform: translateY(-3px);
 }
 /* Right Column: Profile Image Placeholder Styling */
+
+/* Download CV Button Styling */
+#download-cv-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+#download-cv-btn:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-3px);
+    color: #ffffff;
+}
+#download-cv-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f019"; /* Font Awesome download icon */
+    font-size: 0.9rem;
+}
 .hero-image-container {
     flex: 1;
     display: flex;
@@ -763,6 +785,39 @@ header {
 
 /* Lightbox */
 .lightbox {
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-speed) ease;
+    box-shadow: var(--shadow-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#back-to-top:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-3px);
+}
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.92);

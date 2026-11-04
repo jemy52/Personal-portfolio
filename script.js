@@ -1,4 +1,4 @@
-//Hamburger button and the navigation links
+﻿//Hamburger button and the navigation links
 const mobileMenuBtn = document.getElementById('mobile-menu');
 const navLinksList = document.getElementById('nav-links');
 //Listen for a click on the Hamburger button
@@ -242,4 +242,84 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') lightbox.querySelector('.lightbox-prev').click();
     if (e.key === 'ArrowRight') lightbox.querySelector('.lightbox-next').click();
+});
+// Download CV button - generates a PDF via jsPDF and triggers download
+const downloadCvBtn = document.getElementById('download-cv-btn');
+if (downloadCvBtn && typeof window.jspdf !== 'undefined') {
+    downloadCvBtn.addEventListener('click', function () {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.setFontSize(22);
+        doc.setTextColor(252, 76, 94);
+        doc.text('Jemimah Mumo', 20, 20);
+        doc.setFontSize(12);
+        doc.setTextColor(113, 113, 113);
+        doc.text('Web Developer & UI/UX Designer', 20, 32);
+        doc.text('Nairobi, Kenya  |  Open to learning collaborations', 20, 42);
+
+        doc.setLineWidth(0.7);
+        doc.setDrawColor(252, 76, 94);
+        doc.line(20, 48, 190, 48);
+
+        doc.setFontSize(14);
+        doc.setTextColor(252, 76, 94);
+        doc.text('Profile', 20, 62);
+        doc.setFontSize(10);
+        doc.setTextColor(85, 85, 85);
+        const profile = doc.splitTextToSize('Passionate web developer expanding skills in frontend technologies. Experienced in creating clean, responsive, and user-friendly websites using semantic HTML5, CSS3, and JavaScript. Committed to writing efficient code and crafting accessible layouts.', 170);
+        doc.text(profile, 20, 72);
+
+        doc.setFontSize(14);
+        doc.setTextColor(252, 76, 94);
+        doc.text('Key Skills', 20, 96);
+        doc.setFontSize(10);
+        doc.setTextColor(85, 85, 85);
+        doc.text('HTML5  CSS3  JavaScript  Responsive Design  Web Accessibility  UI/UX Design  Typography  Flexbox & CSS Grid', 20, 106);
+
+        doc.setFontSize(14);
+        doc.setTextColor(252, 76, 94);
+        doc.text('Experience', 20, 120);
+        doc.setFontSize(11);
+        doc.setTextColor(51, 51, 51);
+        doc.text('Frontend Developer Intern', 20, 130);
+        doc.setFontSize(9);
+        doc.setTextColor(252, 76, 94);
+        doc.text('2026 - Present', 20, 138);
+        doc.setTextColor(85, 85, 85);
+        doc.text('Building responsive web designs and learning industrial equipment display standards.', 20, 146);
+
+        doc.setFontSize(14);
+        doc.setTextColor(252, 76, 94);
+        doc.text('Education', 20, 162);
+        const edu = [
+            { school: 'Bachelor of Science in Information Technology', date: '2024 - 2028', place: 'The Co-operative University of Kenya' },
+            { school: 'Web Development Bootcamp', date: '2025 - 2026', place: 'Semantic HTML, CSS layout engines & responsive design' },
+            { school: 'Precious Blood Kilungu High School', date: '2020 - 2023', place: 'KCSE Examinations - Grade B' },
+            { school: 'Unity Primary School', date: '2017 - 2019', place: 'KCPE Examinations - 375 marks' }
+        ];
+        let y = 172;
+        edu.forEach(e => {
+            doc.setFontSize(11); doc.setTextColor(51, 51, 51); doc.text(e.school, 20, y);
+            doc.setFontSize(9); doc.setTextColor(252, 76, 94); doc.text(e.date, 20, y + 7);
+            doc.setTextColor(85, 85, 85); doc.text(e.place, 20, y + 15);
+            y += 26;
+        });
+
+        doc.save('Jemimah-Mumo-CV.pdf');
+    });
+}
+// Back to Top button
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

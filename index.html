@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- metadata -->
@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <header>
@@ -82,9 +83,9 @@
                   <li><strong>Interests:</strong>Web Design and Development, Typography</li>
                   <li><strong>Status:</strong> Open to learning collaborations</li>
                  </ul>
-                 <!--Placeholder for future Download CV button-->
                  <div class="about-action">
-                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                      <button class="btn btn-primary" id="download-cv-btn">Download CV</button>
+                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                  </div>
              </div>
                </div>
@@ -337,6 +338,9 @@
     </div>
 
 </section>
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">&#8679;</button>
+
 <script src="script.js" defer></script>
 
 <!-- Lightbox Modal -->
